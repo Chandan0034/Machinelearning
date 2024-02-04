@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Candlestick Chart Example</title>
+  <!-- Include Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<!-- Create a div to hold the chart -->
+<div id="candlestick-chart"></div>
+
+<script>
+  // Sample market data (replace with your own data)
+  var data = [
+    {
+      x: ['2024-01-01', '2024-01-02', '2024-01-03', '2024-01-04'],
+      open: [100, 110, 105, 120],
+      high: [120, 115, 115, 125],
+      low: [90, 100, 100, 105],
+      close: [110, 105, 115, 115]
+    }
+  ];
+
+  // Create the candlestick trace
+  var trace = {
+    x: data[0].x,
+    close: data[0].close,
+    high: data[0].high,
+    low: data[0].low,
+    open: data[0].open,
+    type: 'candlestick',
+    name: 'Market Data'
+  };
+
+  // Define the layout
+  var layout = {
+    title: 'Candlestick Chart Example',
+    xaxis: {
+      title: 'Date'
+    },
+    yaxis: {
+      title: 'Price'
+    }
+  };
+
+  // Plot the chart
+  Plotly.newPlot('candlestick-chart', [trace], layout);
+</script>
+
+</body>
+</html>
